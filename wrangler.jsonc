@@ -1,0 +1,7 @@
+{
+  "name": "zhuz1",
+  "compatibility_date": "2026-04-09", // Update to the day you deploy
+  "assets": {
+    "directory": "./dist",
+  }
+}

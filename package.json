@@ -64,12 +64,18 @@
     "tsx": "^4.21.0",
     "typescript": "~6.0.2",
     "unocss": "66.6.7",
-    "unocss-preset-theme": "^0.14.1"
+    "unocss-preset-theme": "^0.14.1",
+    "wrangler": "^4.81.0"
   },
   "pnpm": {
     "patchedDependencies": {
       "@qwik.dev/partytown@0.11.2": "patches/@qwik.dev__partytown@0.11.2.patch"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "simple-git-hooks"
+    ]
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
