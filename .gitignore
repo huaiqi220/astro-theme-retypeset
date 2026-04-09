@@ -3,6 +3,9 @@ dist/
 .output/
 .astro/
 
+.wrangler/
+
+
 # dependencies
 node_modules/
 

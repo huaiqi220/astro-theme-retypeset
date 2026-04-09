@@ -5,7 +5,6 @@ updated: 2025-04-13
 tags:
   - 部落格主題
   - 指南
-pin: 99
 lang: zh-tw
 abbrlink: theme-guide
 ---
@@ -333,7 +332,7 @@ tags:
 
 # 進階，可選
 draft: true/false
-pin: 0-99
+0-99
 toc: true/false
 lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
 abbrlink: theme-guide

@@ -5,7 +5,6 @@ updated: 2025-04-13
 tags:
   - ブログテーマ
   - ガイド
-pin: 99
 lang: ja
 abbrlink: theme-guide
 ---
@@ -333,7 +332,7 @@ tags:
 
 # 高度な設定（任意）
 draft: true/false
-pin: 0-99
+0-99
 toc: true/false
 lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
 abbrlink: theme-guide

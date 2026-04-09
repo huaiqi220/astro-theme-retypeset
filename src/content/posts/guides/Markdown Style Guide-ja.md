@@ -4,7 +4,6 @@ published: 2025-03-08
 updated: 2025-03-23
 tags:
   - ガイド
-pin: 98
 toc: false
 lang: ja
 abbrlink: markdown-style-guide
