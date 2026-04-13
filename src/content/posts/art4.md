@@ -1,6 +1,6 @@
 ---
 title: 抖音视频中文字的方法
-published: 2026-04-114
+published: 2026-04-14
 tags:
   - 技术
   - ASR
