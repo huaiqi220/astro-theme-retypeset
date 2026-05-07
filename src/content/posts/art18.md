@@ -23,15 +23,15 @@ toc: true
 
 我需要深入分析，给出职业发展建议，并检验他的观点。
 
-首先，分析背景：用户目前在手机厂（可能是xxx、OPPO、vivo、小米等）的NPU部门，做端侧LLM部署。具体工作：将业务侧的几个B参数的LLM部署到手机上，涉及融合算子开发，性能优化，确保端侧精度与torch的比特一致（即对齐）。这需要了解NPU硬件架构、指令集、内存层次等，做算子融合、量化部署等。确实这些与特定NPU强相关。而云计算卡事业部，可能也是同一家公司自研的AI计算卡（比如xxxascend、寒武纪等），但做的是训练/推理框架适配，PyTorch适配等。如果是xxx，可能就是ascend计算产品线，做CANN、PyTorch适配、MindSpore等；如果是其他手机厂，可能也有自己的云端推理卡（如OPPO的？好像不是）。用户说“同公司的云计算卡事业部”，说明该公司既有手机端NPU，也有云端计算卡。这很可能是xxx的端侧NPU（xkk上的NPU）和云的ascend（Ascend），或者是其他：比如联发科？联发科有手机芯片但云端卡不明显。可能是xxx。所以假设是xxx的终端NPU（xkk芯片的NPU，负责部署端侧LLM等）转到云侧的ascend计算产品线（做CANN、PyTorch、vLLM适配）。这很合理。那么用户观点是：目前的工作硬件内容与手机平台强相关，出了本公司就没这个硬件，而云计算卡事业部做PyTorch适配、训练算子开发等，技术更通用，前景更大。这种判断是否正确？
+首先，分析背景：用户目前在手机厂（可能是xxx、OPPO、vivo、小米等）的NPU部门，做端侧LLM部署。具体工作：将业务侧的几个B参数的LLM部署到手机上，涉及融合算子开发，性能优化，确保端侧精度与torch的比特一致（即对齐）。这需要了解NPU硬件架构、指令集、内存层次等，做算子融合、量化部署等。确实这些与特定NPU强相关。而云计算卡事业部，可能也是同一家公司自研的AI计算卡（比如xxxacd、寒武纪等），但做的是训练/推理框架适配，PyTorch适配等。如果是xxx，可能就是acd计算产品线，做CAN、PyTorch适配、MindSpore等；如果是其他手机厂，可能也有自己的云端推理卡（如OPPO的？好像不是）。用户说“同公司的云计算卡事业部”，说明该公司既有手机端NPU，也有云端计算卡。这很可能是xxx的端侧NPU（xkk上的NPU）和云的acd（acd），或者是其他：比如联发科？联发科有手机芯片但云端卡不明显。可能是xxx。所以假设是xxx的终端NPU（xkk芯片的NPU，负责部署端侧LLM等）转到云侧的acd计算产品线（做CAN、PyTorch、vLLM适配）。这很合理。那么用户观点是：目前的工作硬件内容与手机平台强相关，出了本公司就没这个硬件，而云计算卡事业部做PyTorch适配、训练算子开发等，技术更通用，前景更大。这种判断是否正确？
 
 需要验证几个方面：
 
-端侧NPU部署工作的通用性：手机NPU硬件各有不同，但底层很多概念（推理优化、量化、算子融合、内存优化）是通用的。如果深耕端侧AI部署，未来可以在其他移动芯片厂（高通、联发科、苹果、瑞芯微等）或IoT设备公司工作。不过市场相对较小，且大模型端侧部署正在兴起，端侧AI推理优化人才会有需求，但通用性可能不如云侧CUDA/ROCm/Triton等技术栈。确实，云侧GPU编程（CUDA）是目前最通用的，即使是各个大厂的AI框架适配，很多基于PyTorch/CUDA生态。用户说的“与互联网大厂很相关”是对的，云侧计算卡上的PyTorch适配、vLLM等框架优化，各类AI Infra岗位需求大，很多是CUDA编程。但如果是自家计算卡，如ascend，是需要适配PyTorch到升腾的，这就是CANN和torch_npu等。如果只做这家公司的计算卡适配，同样存在“出了本公司就没这个硬件”的问题。因为ascend卡只有xxx用，其他互联网大厂如果使用ascend，那也算是在这公司生态内。但是技术和经验是否通用？如果做达芬奇架构的算子开发（TBE、AI CPU）和PyTorch适配，使用的是类似TVM的调度，但主要是xxx自研工具。这样出来可能去其他做AI芯片的公司（寒武纪、壁仞、摩尔线程等）做类似的算子库和框架适配，或者去互联网大厂做异构计算、AI编译器、推理引擎等。这比端侧NPU经验更通用吗？端侧NPU经验也可以去类似地平线、晶晨等做边缘AI芯片的公司，或去IoT公司做端侧推理优化。但云侧计算卡的生态更大，云侧AI Infra人才需求旺盛，训练优化、推理引擎（vLLM， DeepSpeed等）技术通用，如果用户能够参与到开源社区（如开发ascend的vllm适配，贡献PR给vllm或者PyTorch），那么技术影响力会更大，技能也更通用。而且就算未来不在xxx，也可以去NVIDIA、AMD或互联网大厂做CUDA优化和框架开发。相比之下，端侧NPU的编程模型通常是厂商私有，用自研工具链，和手机SOC绑定。如果一直在手机厂NPU部门，以后跳槽可能去别的手机厂或物联网芯片厂，市场较小。从职业发展角度看，云侧计算卡部的技术栈更“通用”确实有道理。
+端侧NPU部署工作的通用性：手机NPU硬件各有不同，但底层很多概念（推理优化、量化、算子融合、内存优化）是通用的。如果深耕端侧AI部署，未来可以在其他移动芯片厂（高通、联发科、苹果、瑞芯微等）或IoT设备公司工作。不过市场相对较小，且大模型端侧部署正在兴起，端侧AI推理优化人才会有需求，但通用性可能不如云侧CUDA/ROCm/Triton等技术栈。确实，云侧GPU编程（CUDA）是目前最通用的，即使是各个大厂的AI框架适配，很多基于PyTorch/CUDA生态。用户说的“与互联网大厂很相关”是对的，云侧计算卡上的PyTorch适配、vLLM等框架优化，各类AI Infra岗位需求大，很多是CUDA编程。但如果是自家计算卡，如acd，是需要适配PyTorch到acd的，这就是CAN和torch_npu等。如果只做这家公司的计算卡适配，同样存在“出了本公司就没这个硬件”的问题。因为acd卡只有xxx用，其他互联网大厂如果使用acd，那也算是在这公司生态内。但是技术和经验是否通用？如果做达芬奇架构的算子开发（TBE、AI CPU）和PyTorch适配，使用的是类似TVM的调度，但主要是xxx自研工具。这样出来可能去其他做AI芯片的公司（寒武纪、壁仞、摩尔线程等）做类似的算子库和框架适配，或者去互联网大厂做异构计算、AI编译器、推理引擎等。这比端侧NPU经验更通用吗？端侧NPU经验也可以去类似地平线、晶晨等做边缘AI芯片的公司，或去IoT公司做端侧推理优化。但云侧计算卡的生态更大，云侧AI Infra人才需求旺盛，训练优化、推理引擎（vLLM， DeepSpeed等）技术通用，如果用户能够参与到开源社区（如开发acd的vllm适配，贡献PR给vllm或者PyTorch），那么技术影响力会更大，技能也更通用。而且就算未来不在xxx，也可以去NVIDIA、AMD或互联网大厂做CUDA优化和框架开发。相比之下，端侧NPU的编程模型通常是厂商私有，用自研工具链，和手机SOC绑定。如果一直在手机厂NPU部门，以后跳槽可能去别的手机厂或物联网芯片厂，市场较小。从职业发展角度看，云侧计算卡部的技术栈更“通用”确实有道理。
 
-检查观点：“这个硬件内容也是跟当前手机平台强相关。出了本公司就没这个硬件。” 如果当前用的是xxxNPU（如Da Vinci NPU），类似的硬件还有别的公司吗？比如寒武纪NPU IP（用于xkk？早期xkk用寒武纪，后来自研达芬奇），但是其他手机SOC里，有高通Hexagon，苹果ANE，三星NPU，联发科APU等。每家自有硬件，但概念相通。但编程模型完全不同。所以确实是强相关。即便通用，有点夸大，“出了本公司就没这个硬件”，意思是市场上没有完全一样的硬件，但其他公司的类似硬件需要类似技能，但转过去需要重新学习其工具链。而云端计算卡呢，如果是ascend，同样是特有硬件，也是出了xxx（或鲲鹏ascend生态）就没这硬件了。但区别在于，ascend的PyTorch适配和vLLM等框架对接，很多工作是框架层面的，例如实现PyTorch的第三方后端（类似torch_npu），这需要对PyTorch的调度机制、算子注册分发、图优化等非常熟悉，这些知识是跨硬件通用的。在适配vLLM时，需要实现相应的attention kernel、KV cache管理、连续批处理等，这些推理引擎知识通用。就算ascend硬件特殊，但在上层框架和算法层面有大量可迁移知识。因此云侧计算卡事业部的工作更加贴近AI Infra和开源社区通用技术栈，前景更大。但也要注意，如果去了之后只是做一些硬件使能的算子开发（如TBE开发，单算子优化），而不涉及框架层，可能仍然会被硬件绑定。但通常会涉及整体适配，可以自己往框架方向深入。所以总体看观点正确。
+检查观点：“这个硬件内容也是跟当前手机平台强相关。出了本公司就没这个硬件。” 如果当前用的是xxxNPU（如Da Vinci NPU），类似的硬件还有别的公司吗？比如寒武纪NPU IP（用于xkk？早期xkk用寒武纪，后来自研达芬奇），但是其他手机SOC里，有高通Hexagon，苹果ANE，三星NPU，联发科APU等。每家自有硬件，但概念相通。但编程模型完全不同。所以确实是强相关。即便通用，有点夸大，“出了本公司就没这个硬件”，意思是市场上没有完全一样的硬件，但其他公司的类似硬件需要类似技能，但转过去需要重新学习其工具链。而云端计算卡呢，如果是acd，同样是特有硬件，也是出了xxx（或鲲鹏acd生态）就没这硬件了。但区别在于，acd的PyTorch适配和vLLM等框架对接，很多工作是框架层面的，例如实现PyTorch的第三方后端（类似torch_npu），这需要对PyTorch的调度机制、算子注册分发、图优化等非常熟悉，这些知识是跨硬件通用的。在适配vLLM时，需要实现相应的attention kernel、KV cache管理、连续批处理等，这些推理引擎知识通用。就算acd硬件特殊，但在上层框架和算法层面有大量可迁移知识。因此云侧计算卡事业部的工作更加贴近AI Infra和开源社区通用技术栈，前景更大。但也要注意，如果去了之后只是做一些硬件使能的算子开发（如TBE开发，单算子优化），而不涉及框架层，可能仍然会被硬件绑定。但通常会涉及整体适配，可以自己往框架方向深入。所以总体看观点正确。
 
-职业发展建议：结合目前硬件、互联网、AI发展。目前AI大模型训练/推理需求爆发，NVIDIA GPU主导，但国产化替代也是趋势，云侧计算卡尤其是国产AI芯片（xxxascend、寒武纪、海光DCU等）在信创和互联网大厂有采购。互联网大厂自研芯片（如百度昆仑、阿里含光、字节也有）也需要做框架适配。因此懂得PyTorch适配、vLLM/TensorRT-LLM等推理框架优化的人才非常吃香。而且即使将来离开xxx，这些技能可以直接用于其他AI芯片公司或互联网大厂的基础设施部门。端侧部署虽然也是方向，端侧大模型是热点（如苹果 Intelligence、高通AI Hub、各手机厂端侧模型），但端侧模型目前较小（3B及以下），硬件约束强，优化技巧更偏向底层汇编、量化、剪枝等。且市场可能不如云端大规模训练/infra那么大。所以，转到云侧计算卡是好的。但是，我应提醒风险：内部转岗是否容易，能否接触到核心的框架适配工作，以及现在整个行业的大环境（互联网裁员等），但总体推荐尝试。
+职业发展建议：结合目前硬件、互联网、AI发展。目前AI大模型训练/推理需求爆发，NVIDIA GPU主导，但国产化替代也是趋势，云侧计算卡尤其是国产AI芯片（xxxacd、寒武纪、海光DCU等）在信创和互联网大厂有采购。互联网大厂自研芯片（如百度昆仑、阿里含光、字节也有）也需要做框架适配。因此懂得PyTorch适配、vLLM/TensorRT-LLM等推理框架优化的人才非常吃香。而且即使将来离开xxx，这些技能可以直接用于其他AI芯片公司或互联网大厂的基础设施部门。端侧部署虽然也是方向，端侧大模型是热点（如苹果 Intelligence、高通AI Hub、各手机厂端侧模型），但端侧模型目前较小（3B及以下），硬件约束强，优化技巧更偏向底层汇编、量化、剪枝等。且市场可能不如云端大规模训练/infra那么大。所以，转到云侧计算卡是好的。但是，我应提醒风险：内部转岗是否容易，能否接触到核心的框架适配工作，以及现在整个行业的大环境（互联网裁员等），但总体推荐尝试。
 
 给建议时，要肯定他的观点基本正确，但也要补充一些细节：虽然云端卡也是自家硬件，但上层框架经验更通用；建议在转岗前预先学习CUDA、Triton、PyTorch框架源码、vLLM等，提升竞争力；如果转岗成功，应积极主动承担框架适配和社区贡献，积累开源经验；还可以考虑以后往AI编译器（如TVM、MLIR）发展，结合底层硬件和上层框架，这样更加通用。同时，端侧经验也有价值，特别是量化、内存优化可与云端推理优化相辅相成。也可以委婉指出：如果能在现有岗位深入做一些通用性研究，比如发表端侧推理优化文章或参与开源端侧推理框架（如llama.cpp、MLC-LLM等），也能扩宽跳槽路径。但内部转岗是最直接的方向。综合建议。
 
@@ -53,7 +53,7 @@ toc: true
 
 注意，避免过于鼓励离职，而是内部转岗合理。检查是否有需要纠正的：“学习一定硬件、融合算子内容”，但在手机平台强相关。这没错。云侧算子在GPU上可学CUDA在自家卡上学类似，但如通过PyTorch适配，框架知识更通用。我认为观点总体对。说“你放心，你的判断完全在点子上”。
 
-加上一些实际案例：如果是在xxx，从终端NPU转HS ascend，或从终端芯片转向云计算产品线。但不要指名，可以模糊。因为不清楚具体公司。但是说手机厂和云计算卡事业部，可能指xxx，但也可以直接说。
+加上一些实际案例：如果是在xxx，从终端NPU转HS acd，或从终端芯片转向云计算产品线。但不要指名，可以模糊。因为不清楚具体公司。但是说手机厂和云计算卡事业部，可能指xxx，但也可以直接说。
 
 最终，以鼓励和行动计划结尾。我会输出详细的中文回答。
 
@@ -141,9 +141,9 @@ toc: true
 
 核心资产是：
 
-PyTorch backend、torch_npu、CANN、算子库、vLLM、分布式推理、KV cache、continuous batching、PageAttention、量化、profiling、kernel 性能优化、训练框架适配。
+PyTorch backend、torch_npu、CAN、算子库、vLLM、分布式推理、KV cache、continuous batching、PageAttention、量化、profiling、kernel 性能优化、训练框架适配。
 
-这个方向更贴近外部市场。vLLM 已经是 PyTorch Foundation hosted project，官方强调它支持 100+ LLM 架构、硬件插件、torch.compile 优化、量化、prefix caching、speculative decoding、分布式推理等能力；xxx Ascend 也能通过插件体系接入。([PyTorch][2]) 同时，vLLM-Ascend 是 vLLM 社区维护的 Ascend NPU 插件，目标就是让 Transformer、MoE、Embedding、多模态模型在 Ascend NPU 上运行。([GitHub][3])
+这个方向更贴近外部市场。vLLM 已经是 PyTorch Foundation hosted project，官方强调它支持 100+ LLM 架构、硬件插件、torch.compile 优化、量化、prefix caching、speculative decoding、分布式推理等能力；xxx acd 也能通过插件体系接入。([PyTorch][2]) 同时，vLLM-acd 是 vLLM 社区维护的 acd NPU 插件，目标就是让 Transformer、MoE、Embedding、多模态模型在 acd NPU 上运行。([GitHub][3])
 
 所以你的核心判断可以概括为：
 
@@ -161,11 +161,11 @@ AI 的投入重心正在从“只训练大模型”转向“训练 + 后训练 +
 
 这句话其实正好击中你的职业选择：**以后最值钱的人，不一定是只懂某个硬件细节的人，而是能把模型、框架、编译器、算子、runtime、集群性能串起来的人。**
 
-### 3. xxx/Ascend 这个方向是不是也有平台绑定风险？
+### 3. xxx/acd 这个方向是不是也有平台绑定风险？
 
 有，但比手机 NPU 小一些。
 
-Ascend 仍然是特定硬件和软件栈，CANN、torch_npu、MindIE、Ascend-vLLM 等都有平台属性。Ascend PyTorch adapter 的官方定位就是通过 torch_npu 把 Ascend NPU 接到 PyTorch，让 PyTorch 用户获得 Ascend AI 处理器算力。([GitHub][7]) Ascend-vLLM 也是在 vLLM 基础上面向 NPU 做优化，继承 continuous batching、PageAttention、prefix caching 等推理能力。([support.hxwcloud.com][8])
+acd 仍然是特定硬件和软件栈，CAN、torch_npu、MindIE、acd-vLLM 等都有平台属性。acd PyTorch adapter 的官方定位就是通过 torch_npu 把 acd NPU 接到 PyTorch，让 PyTorch 用户获得 acd AI 处理器算力。([GitHub][7]) acd-vLLM 也是在 vLLM 基础上面向 NPU 做优化，继承 continuous batching、PageAttention、prefix caching 等推理能力。([support.hxwcloud.com][8])
 
 但它的可迁移性更强，原因是你会接触到外部通用概念：
 
@@ -173,7 +173,7 @@ PyTorch dispatch / backend / FX / torch.compile；vLLM scheduler；KV cache；at
 
 这些东西在 NVIDIA CUDA、AMD ROCm、Intel XPU、AWS Neuron、TPU、国产 GPU/NPU 上都有类似映射。即使 API 不同，问题结构是相通的。
 
-相比之下，手机 NPU 如果你长期只做某手机 SoC 的私有算子实现，外部面试官可能会问：“你这个经验离我的 GPU/H100/A800/Ascend 训练推理平台有多近？”你的解释成本会更高。
+相比之下，手机 NPU 如果你长期只做某手机 SoC 的私有算子实现，外部面试官可能会问：“你这个经验离我的 GPU/H100/A800/acd 训练推理平台有多近？”你的解释成本会更高。
 
 ### 4. 从职场行情看，你该往“算法”还是“AI infra”走？
 
@@ -204,10 +204,10 @@ PyTorch dispatch / backend / FX / torch.compile；vLLM scheduler；KV cache；at
 第二，是否有机会做 kernel、算子库、runtime、scheduler、memory、通信、量化、profiling 中至少一个深水区。
 第三，是否有性能指标 ownership，比如 TTFT、TPOT、吞吐、显存占用、MFU、端到端 QPS、训练 step time。
 第四，是否参与设计评审，而不是只接单编码。
-第五，是否能接触外部开源生态或至少对齐开源接口，比如 vLLM-Ascend、torch_npu、PyTorch upstream 兼容。
+第五，是否能接触外部开源生态或至少对齐开源接口，比如 vLLM-acd、torch_npu、PyTorch upstream 兼容。
 
 如果答案大多是“是”，值得转。
-如果答案是“只是把一批模型从 PyTorch 适配到 Ascend，跑通 demo，调环境，修零碎兼容问题”，那它仍然比手机 NPU 通用一些，但上限没有你想象中那么大。
+如果答案是“只是把一批模型从 PyTorch 适配到 acd，跑通 demo，调环境，修零碎兼容问题”，那它仍然比手机 NPU 通用一些，但上限没有你想象中那么大。
 
 ### 6. 你接下来 6–12 个月应该怎么布局
 
@@ -227,7 +227,7 @@ PyTorch dispatch / backend / FX / torch.compile；vLLM scheduler；KV cache；at
 这个项目不需要很花哨，但要体现你能做 profiling、定位瓶颈、解释性能。
 
 **第四层：避免职业标签被锁死**
-不要把自己定位成“Ascend 工程师”或“手机 NPU 工程师”，而是定位成：
+不要把自己定位成“acd 工程师”或“手机 NPU 工程师”，而是定位成：
 
 > **LLM inference / AI compiler-runtime / kernel optimization engineer**
 
@@ -252,11 +252,11 @@ PyTorch dispatch / backend / FX / torch.compile；vLLM scheduler；KV cache；at
 
 [1]: https://pytorch.org/blog/executorch-becomes-part-of-pytorch-core/ "ExecuTorch Becomes a Part of PyTorch Core to Expand On-Device Inference Capabilities – PyTorch"
 [2]: https://pytorch.org/blog/pytorch-foundation-welcomes-vllm/ "PyTorch Foundation Welcomes vLLM as a Hosted Project – PyTorch"
-[3]: https://github.com/vllm-project/vllm-ascend "GitHub - vllm-project/vllm-ascend: Community maintained hardware plugin for vLLM on Ascend · GitHub"
+[3]: https://github.com/vllm-project/vllm-acd "GitHub - vllm-project/vllm-acd: Community maintained hardware plugin for vLLM on acd · GitHub"
 [4]: https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026 "Gartner Says Worldwide AI Spending Will Total $2.5 Trillion in 2026"
 [5]: https://www.gartner.com/en/newsroom/press-releases/2025-10-15-gartner-says-artificial-intelligence-optimized-iaas-is-poised-to-become-the-next-growth-engine-for-artificial-intelligence-infrastructure "Gartner Says AI-Optimized IaaS Is Poised to Become the Next Growth Engine for AI Infrastructure"
 [6]: https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-27/12200843.PDF "摩尔线程智能科技（北京）股份有限公司2025年年度报告"
-[7]: https://github.com/Ascend/pytorch "GitHub - Ascend/pytorch: Ascend PyTorch adapter (torch_npu). Mirror of https://gitcode.com/Ascend/pytorch · GitHub"
-[8]: https://support.hxwcloud.com/intl/en-us/bestpractice-modelarts/modelarts_llm_infer_5906001.html "Introduction to Ascend-vLLM_Adapting Mainstream Open-Source Models to Ascend-vLLM for NPU Inference Based on Lite Server (New)_LLM Inference_Best Practices_ModelArts-hxw Cloud"
+[7]: https://github.com/acd/pytorch "GitHub - acd/pytorch: acd PyTorch adapter (torch_npu). Mirror of https://gitcode.com/acd/pytorch · GitHub"
+[8]: https://support.hxwcloud.com/intl/en-us/bestpractice-modelarts/modelarts_llm_infer_5906001.html "Introduction to acd-vLLM_Adapting Mainstream Open-Source Models to acd-vLLM for NPU Inference Based on Lite Server (New)_LLM Inference_Best Practices_ModelArts-hxw Cloud"
 
 谋定而后动
