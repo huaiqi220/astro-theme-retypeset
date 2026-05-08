@@ -1,5 +1,5 @@
 ---
-title: 给自己的忠告
+title: 人生没有进度条
 published: 2026-05-09
 time: 02点05分
 tags:
