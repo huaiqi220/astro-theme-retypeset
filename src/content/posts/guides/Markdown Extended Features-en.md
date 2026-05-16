@@ -200,6 +200,38 @@ To embed Spotify content, use the leaf directive `::spotify{url="spotify-url"}`.
 
 ::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}
 
+## QQ Music
+
+To embed a QQ Music song, use the leaf directive `::qqmusic{url="qq-music-url"}`.
+
+### Syntax
+
+```
+::qqmusic{url="https://y.qq.com/n/ryqq/songDetail/004HiCOt3liJjv"}
+```
+
+### Output
+
+::qqmusic{url="https://y.qq.com/n/ryqq/songDetail/004HiCOt3liJjv"}
+
+## NetEase Cloud Music
+
+To embed NetEase Cloud Music content, use the leaf directive `::neteasemusic{url="netease-music-url"}`.
+
+### Syntax
+
+```
+::neteasemusic{url="https://music.163.com/#/song?id=2716532450"}
+
+::netease{url="https://music.163.com/#/playlist?id=3778678"}
+```
+
+### Output
+
+::neteasemusic{url="https://music.163.com/#/song?id=2716532450"}
+
+::netease{url="https://music.163.com/#/playlist?id=3778678"}
+
 ## Tweets
 
 To embed tweets, use the leaf directive `::tweet{url="tweet-url"}`.

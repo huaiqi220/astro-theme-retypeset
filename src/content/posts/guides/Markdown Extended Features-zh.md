@@ -200,6 +200,38 @@ graph TD;
 
 ::spotify{url="https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG"}
 
+## QQ 音乐
+
+使用双冒号语法 `::qqmusic{url="qq-music-url"}`，即可嵌入 QQ 音乐单曲。
+
+### 语法
+
+```
+::qqmusic{url="https://y.qq.com/n/ryqq/songDetail/004HiCOt3liJjv"}
+```
+
+### 效果
+
+::qqmusic{url="https://y.qq.com/n/ryqq/songDetail/004HiCOt3liJjv"}
+
+## 网易云音乐
+
+使用双冒号语法 `::neteasemusic{url="netease-music-url"}`，即可嵌入网易云音乐内容。
+
+### 语法
+
+```
+::neteasemusic{url="https://music.163.com/#/song?id=2716532450"}
+
+::netease{url="https://music.163.com/#/playlist?id=3778678"}
+```
+
+### 效果
+
+::neteasemusic{url="https://music.163.com/#/song?id=2716532450"}
+
+::netease{url="https://music.163.com/#/playlist?id=3778678"}
+
 ## X 推文
 
 使用双冒号语法 `::tweet{url="tweet-url"}`，即可嵌入 X 推文。

@@ -1,0 +1,17 @@
+(node:67924) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 change listeners added to [FSWatcher]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+[31m[1m02:17:11[22m [ERROR][39m Error: Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://img.shenshijiu.com/lightroom2.jpg&#x22;,&#x22;alt&#x22;:&#x22;_2&#x22;,&#x22;index&#x22;:0}
+    at updateImageReferencesInBody (C:\Users\zhuzi\Documents\shenshijiuweb\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._71474709e71b9d0584396e8e1931c888\node_modules\astro\dist\content\runtime.js:338:13)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:472:9)
+    at async renderEntry (C:\Users\zhuzi\Documents\shenshijiuweb\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._71474709e71b9d0584396e8e1931c888\node_modules\astro\dist\content\runtime.js:396:82)
+    at async addMetaToPost (C:\Users\zhuzi\Documents\shenshijiuweb\astro-theme-retypeset\src\utils\content.ts:26:39)
+    at async Promise.all (index 0)
+    at async _getPosts (C:\Users\zhuzi\Documents\shenshijiuweb\astro-theme-retypeset\src\utils\content.ts:90:25)
+[31m[1m02:17:11[22m [ERROR][39m Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://img.shenshijiu.com/lightroom2.jpg&#x22;,&#x22;alt&#x22;:&#x22;_2&#x22;,&#x22;index&#x22;:0}
+  [1mStack trace:[22m
+[2m    at updateImageReferencesInBody (C:\Users\zhuzi\Documents\shenshijiuweb\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._71474709e71b9d0584396e8e1931c888\node_modules\astro\dist\content\runtime.js:338:13)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at async renderEntry (C:\Users\zhuzi\Documents\shenshijiuweb\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._71474709e71b9d0584396e8e1931c888\node_modules\astro\dist\content\runtime.js:396:82)
+    at async Promise.all (index 0)[22m

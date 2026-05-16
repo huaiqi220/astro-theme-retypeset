@@ -1,5 +1,146 @@
 import { visit } from 'unist-util-visit'
 
+const NETEASE_MUSIC_EMBED_TYPES = {
+  song: { embedType: '2', height: 86, playerHeight: 66 },
+  playlist: { embedType: '0', height: 480, playerHeight: 430 },
+  album: { embedType: '1', height: 480, playerHeight: 430 },
+}
+
+function parseDirectiveUrl(url, serviceName) {
+  try {
+    return new URL(url)
+  }
+  catch {
+    console.warn(`Invalid ${serviceName} URL: ${url}`)
+    return null
+  }
+}
+
+function isHostOrSubdomain(hostname, domain) {
+  return hostname === domain || hostname.endsWith(`.${domain}`)
+}
+
+function parseQQMusicUrl(url) {
+  const parsedUrl = parseDirectiveUrl(url, 'QQ Music')
+  if (!parsedUrl) {
+    return null
+  }
+
+  if (!isHostOrSubdomain(parsedUrl.hostname, 'y.qq.com')) {
+    console.warn(`Invalid QQ Music URL: ${url}`)
+    return null
+  }
+
+  const songId = parsedUrl.searchParams.get('songid')
+  if (songId && /^\d+$/.test(songId)) {
+    return { paramName: 'songid', id: songId }
+  }
+
+  const songMid = parsedUrl.searchParams.get('songmid') ?? parsedUrl.pathname.match(/\/songDetail\/([^/?#]+)/)?.[1]
+  if (songMid && /^[\w-]+$/.test(songMid)) {
+    return { paramName: 'songmid', id: songMid }
+  }
+
+  console.warn(`Invalid QQ Music URL: ${url}`)
+  return null
+}
+
+function parseNeteaseMusicUrl(url) {
+  const parsedUrl = parseDirectiveUrl(url, 'NetEase Cloud Music')
+  if (!parsedUrl) {
+    return null
+  }
+
+  if (!isHostOrSubdomain(parsedUrl.hostname, 'music.163.com')) {
+    console.warn(`Invalid NetEase Cloud Music URL: ${url}`)
+    return null
+  }
+
+  if (parsedUrl.pathname === '/outchain/player') {
+    const embedType = parsedUrl.searchParams.get('type')
+    const id = parsedUrl.searchParams.get('id')
+    const type = Object.entries(NETEASE_MUSIC_EMBED_TYPES)
+      .find(([, config]) => config.embedType === embedType)?.[0]
+
+    if (type && id && /^\d+$/.test(id)) {
+      return { type, id }
+    }
+  }
+
+  const paths = [
+    `${parsedUrl.pathname}${parsedUrl.search}`,
+    parsedUrl.hash.replace(/^#/, ''),
+  ]
+
+  for (const path of paths) {
+    const match = path.match(/\/(song|playlist|album)(?:\/|\?id=)(\d+)/)
+    if (match) {
+      const [, type, id] = match
+      return { type, id }
+    }
+  }
+
+  console.warn(`Invalid NetEase Cloud Music URL: ${url}`)
+  return null
+}
+
+function renderQQMusic(node) {
+  const url = node.attributes?.url ?? ''
+  if (!url) {
+    console.warn(`Missing QQ Music URL`)
+    return false
+  }
+
+  const parsed = parseQQMusicUrl(url)
+  if (!parsed) {
+    return false
+  }
+
+  const { paramName, id } = parsed
+
+  return `
+    <figure>
+      <iframe
+        class="qqmusic-embed"
+        src="https://i.y.qq.com/n2/m/outchain/player/index.html?${paramName}=${id}&songtype=0"
+        title="QQ Music Embed"
+        height="65"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </figure>
+    `
+}
+
+function renderNeteaseMusic(node) {
+  const url = node.attributes?.url ?? ''
+  if (!url) {
+    console.warn(`Missing NetEase Cloud Music URL`)
+    return false
+  }
+
+  const parsed = parseNeteaseMusicUrl(url)
+  if (!parsed) {
+    return false
+  }
+
+  const { type, id } = parsed
+  const { embedType, height, playerHeight } = NETEASE_MUSIC_EMBED_TYPES[type]
+
+  return `
+    <figure>
+      <iframe
+        class="netease-music-embed"
+        src="https://music.163.com/outchain/player?type=${embedType}&id=${id}&auto=0&height=${playerHeight}"
+        title="NetEase Cloud Music Embed"
+        height="${height}"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </figure>
+    `
+}
+
 const embedHandlers = {
   // GitHub Repository Card
   github: (node) => {
@@ -158,6 +299,13 @@ const embedHandlers = {
     </figure>
     `
   },
+
+  // QQ Music
+  qqmusic: renderQQMusic,
+
+  // NetEase Cloud Music
+  netease: renderNeteaseMusic,
+  neteasemusic: renderNeteaseMusic,
 }
 
 export function remarkLeafDirectives() {

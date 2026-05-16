@@ -156,7 +156,9 @@ lite-youtube > .lty-playbtn {
 .bilibili-player {
   --at-apply: 'aspect-video w-full';
 }
-.spotify-embed {
+.spotify-embed,
+.qqmusic-embed,
+.netease-music-embed {
   --at-apply: 'w-full rounded-3';
 }
 .twitter-tweet {
