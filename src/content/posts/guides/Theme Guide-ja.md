@@ -210,7 +210,7 @@ footer: {
 preload: {
   // 画像ホスティング URL
   // リモート画像を最適化し、低品質のプレースホルダーを生成
-  imageHostURL: 'image.radishzz.cc'
+  imageHostURL: 'img.shenshijiu.com'
   // カスタム Google Analytics トラッキングスクリプト
   // トラッキングスクリプトをカスタムドメインにプロキシするユーザー向け
   customGoogleAnalyticsJS: ''

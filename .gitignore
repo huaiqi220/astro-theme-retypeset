@@ -1,6 +1,9 @@
 local_images
 *.ps1
 
+# local R2 upload helper (contains API token — do not commit)
+r2_upload.py
+
 # build output
 dist/
 .output/

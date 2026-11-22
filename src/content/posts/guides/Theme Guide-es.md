@@ -210,7 +210,7 @@ footer: {
 preload: {
   // URL de alojamiento de imágenes
   // optimizar imágenes remotas y generar marcadores de posición de baja calidad
-  imageHostURL: 'image.radishzz.cc'
+  imageHostURL: 'img.shenshijiu.com'
   // js personalizado de google analytics
   // para usuarios que proxean scripts de seguimiento a un dominio personalizado
   customGoogleAnalyticsJS: ''

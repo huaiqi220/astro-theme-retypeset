@@ -17,16 +17,10 @@ abbrlink: markdown-extended-features
 ### Синтаксис
 
 ```
-![Описание изображения](https://image.radishzz.cc/image/gallery/06.webp)
+![Описание изображения](../_images/image-01.webp)
 
-![_Описание изображения](https://image.radishzz.cc/image/gallery/06.webp)
+![_Описание изображения](../_images/image-01.webp)
 ```
-
-### Результат
-
-![Описание изображения](https://image.radishzz.cc/image/gallery/06.webp)
-
-![_Описание изображения](https://image.radishzz.cc/image/gallery/06.webp)
 
 ## Блоки примечаний
 
@@ -132,23 +126,13 @@ graph TD;
 
 ```
 :::gallery
-![Альпака](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![Поворачивает голову](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![Зрительный контакт](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![Детёныш альпаки](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![Ой, какая прелесть!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+![Альпака](../_images/gallery-01.webp)
+![Поворачивает голову](../_images/gallery-02.webp)
+![Зрительный контакт](../_images/gallery-03.webp)
+![Детёныш альпаки](../_images/gallery-04.webp)
+![Ой, какая прелесть!](../_images/gallery-05.webp)
 :::
 ```
-
-### Результат
-
-:::gallery
-![Альпака](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![Поворачивает голову](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![Зрительный контакт](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![Детёныш альпаки](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![Ой, какая прелесть!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
-:::
 
 ## Репозитории GitHub
 

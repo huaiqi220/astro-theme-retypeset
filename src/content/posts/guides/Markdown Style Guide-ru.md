@@ -34,7 +34,6 @@ abbrlink: markdown-style-guide
 #### Заголовок 4
 ##### Заголовок 5
 ###### Заголовок 6
-
 ## Абзацы
 
 Для создания абзацев используйте пустую строку для разделения одной или нескольких строк текста.
@@ -62,12 +61,8 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 ```
 ![Описание изображения](../_images/image-01.jpeg)
 
-![Описание изображения](https://image.example.com/image-01.webp)
+![Описание изображения](../_images/image-01.webp)
 ```
-
-### Результат
-
-![Описание изображения](https://image.radishzz.cc/picsmaller/03.webp)
 
 ## Цитаты
 

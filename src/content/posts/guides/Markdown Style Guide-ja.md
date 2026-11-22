@@ -34,7 +34,6 @@ abbrlink: markdown-style-guide
 #### 見出し 4
 ##### 見出し 5
 ###### 見出し 6
-
 ## 段落
 
 空行を使用してテキストを区切ることで、段落を作成できます。
@@ -62,12 +61,8 @@ abbrlink: markdown-style-guide
 ```
 ![画像の説明](../_images/image-01.jpeg)
 
-![画像の説明](https://image.example.com/image-01.webp)
+![画像の説明](../_images/image-01.webp)
 ```
-
-### 効果
-
-![画像の説明](https://image.radishzz.cc/picsmaller/03.webp)
 
 ## 引用ブロック
 

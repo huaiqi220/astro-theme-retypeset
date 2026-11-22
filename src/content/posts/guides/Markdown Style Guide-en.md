@@ -34,7 +34,6 @@ To create headings, add number signs `#` in front of a word or phrase. The numbe
 #### Heading 4
 ##### Heading 5
 ###### Heading 6
-
 ## Paragraphs
 
 To create paragraphs, use a blank line to separate one or more lines of text.
@@ -62,12 +61,8 @@ To add images, add an exclamation mark `!`, followed by alt text in brackets `[]
 ```
 ![Image Description](../_images/image-01.jpeg)
 
-![Image Description](https://image.example.com/image-01.webp)
+![Image Description](../_images/image-01.webp)
 ```
-
-### Output
-
-![Image Description](https://image.radishzz.cc/picsmaller/03.webp)
 
 ## Blockquotes
 

@@ -34,7 +34,6 @@ Para crear encabezados, agregue signos de numeral `#` delante de una palabra o f
 #### Encabezado 4
 ##### Encabezado 5
 ###### Encabezado 6
-
 ## Párrafos
 
 Para crear párrafos, use una línea en blanco para separar una o más líneas de texto.
@@ -62,12 +61,8 @@ Para agregar imágenes, añada un signo de exclamación `!`, seguido de texto al
 ```
 ![Descripción de la Imagen](../_images/image-01.jpeg)
 
-![Descripción de la Imagen](https://image.example.com/image-01.webp)
+![Descripción de la Imagen](../_images/image-01.webp)
 ```
-
-### Resultado
-
-![Descripción de la Imagen](https://image.radishzz.cc/picsmaller/03.webp)
 
 ## Citas en Bloque
 

@@ -17,16 +17,10 @@ Para crear leyendas automáticas para figuras, utilice la sintaxis estándar de 
 ### Sintaxis
 
 ```
-![Descripción de la imagen](https://image.radishzz.cc/image/gallery/06.webp)
+![Descripción de la imagen](../_images/image-01.webp)
 
-![_Descripción de la imagen](https://image.radishzz.cc/image/gallery/06.webp)
+![_Descripción de la imagen](../_images/image-01.webp)
 ```
-
-### Resultado
-
-![Descripción de la imagen](https://image.radishzz.cc/image/gallery/06.webp)
-
-![_Descripción de la imagen](https://image.radishzz.cc/image/gallery/06.webp)
 
 ## Bloques de Admonición
 
@@ -132,23 +126,13 @@ Para crear galerías de imágenes, utilice la directiva contenedor `:::gallery`.
 
 ```
 :::gallery
-![Alpaca](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![Girando la cabeza](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![Contacto visual](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![Alpaca bebé](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![¡Ay, qué lindo!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+![Alpaca](../_images/gallery-01.webp)
+![Girando la cabeza](../_images/gallery-02.webp)
+![Contacto visual](../_images/gallery-03.webp)
+![Alpaca bebé](../_images/gallery-04.webp)
+![¡Ay, qué lindo!](../_images/gallery-05.webp)
 :::
 ```
-
-### Resultado
-
-:::gallery
-![Alpaca](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![Girando la cabeza](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![Contacto visual](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![Alpaca bebé](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![¡Ay, qué lindo!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
-:::
 
 ## Repositorios de GitHub
 

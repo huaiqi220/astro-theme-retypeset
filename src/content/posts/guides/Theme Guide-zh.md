@@ -210,7 +210,7 @@ footer: {
 preload: {
   // 图床地址
   // 优化远程图片并生成低质量占位符
-  imageHostURL: 'image.radishzz.cc'
+  imageHostURL: 'img.shenshijiu.com'
   // 定制 google analytics 跟踪脚本
   // 适用于代理跟踪脚本到自定义域名的用户
   customGoogleAnalyticsJS: ''

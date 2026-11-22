@@ -34,7 +34,6 @@ abbrlink: markdown-style-guide
 #### 四级标题
 ##### 五级标题
 ###### 六级标题
-
 ## 段落
 
 使用空行分隔文本，即可创建段落。
@@ -62,12 +61,8 @@ abbrlink: markdown-style-guide
 ```
 ![图片描述](../_images/image-01.jpeg)
 
-![图片描述](https://image.example.com/image-01.webp)
+![图片描述](../_images/image-01.webp)
 ```
-
-### 效果
-
-![图片描述](https://image.radishzz.cc/picsmaller/03.webp)
 
 ## 块引用
 
